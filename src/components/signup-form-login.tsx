@@ -24,18 +24,16 @@ export function SignupFormLogin({
 }: React.ComponentProps<"div">) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  useEffect(() => {
-    async function login() {
-      console.log("email", email, "password", password);
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("email", email, "password", password);
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-      console.log("data", data, "error", error);
-    }
-    login();
-  }, []);
+    console.log("data", data, "error", error);
+  };
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -46,7 +44,7 @@ export function SignupFormLogin({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleLogin}>
             <FieldGroup>
               {/*<Field>
                 <FieldLabel htmlFor="name">Full Name</FieldLabel>
