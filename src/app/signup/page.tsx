@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { SignupFormLogin } from "@/components/signup-form-login";
+import { SignupForm } from "@/components/signup-form";
 
 export default function SignupPage() {
   return (
@@ -25,7 +25,7 @@ export default function SignupPage() {
           <span>Noodle.</span>
         </a>
 
-        <SignupFormLogin />
+        <SignupForm />
       </div>
     </div>
   );

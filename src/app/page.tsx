@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { motion } from "motion/react"; // ✅
+import { motion } from "motion/react";
 import { Backlight } from "@/components/ui/backlight";
 import { Ripple } from "@/components/ui/ripple";
 
